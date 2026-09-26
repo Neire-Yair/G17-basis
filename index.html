@@ -9,64 +9,121 @@
 <body>
     <!-- ENCABEZADO -->
     <header>
-        <h1>TechCart</h1>   
+        <h1>TechCart</h1>
         <nav aria-label="Principal">
             <ul>
-                <li>
-                    <a href="#catalogo">
-                        Catalogo
-                    </a>
-                </li>
-                <li>
-                    <a href="#compra">
-                        Comprar
-                    </a>
-                </li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#catalogo">Catalogo</a></li>
+                <li><a href="#compra">Comprar</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
             </ul>
         </nav>
     </header>
+
+    <section class="promo" aria-label="Promoción">
+        <p>Promo del mes: llevate una laptop premium con envío gratis.</p>
+    </section>
+
     <!-- CONTENIDO PRINCIPAL -->
     <main>
         <section id="catalogo">
             <h2>Catalogo de productos</h2>
+            <nav class="categorias" aria-label="Categorías del catálogo">
+                <ul>
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </nav>
             <div class="productos">
                 <article class="destacado">
                     <figure>
                         <img src="https://www.appleperu.pe/wp-content/uploads/macbook-pro-retina.jpg" alt="Macbook Pro 14 pulgadas gris espacial" width="200"/>
                         <figcaption>Apple</figcaption>
                     </figure>
-                    <h3>Macbook Pro 14"</h3>
+                    <h3 class="titulo">Macbook Pro 14"</h3>
                     <p><strong>$1,999.99</strong></p>
-                    <button type="button">Agregar al carrito</button>
+                    <table class="especificaciones">
+                        <caption>Especificaciones</caption>
+                        <tbody>
+                            <tr><th scope="row">Pantalla</th><td>14.2 pulgadas</td></tr>
+                            <tr><th scope="row">Procesador</th><td>M3 Pro</td></tr>
+                            <tr><th scope="row">Memoria</th><td>18 GB</td></tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="comprar-btn"><span>Comprar</span><span class="contador" aria-label="Cantidad de productos">1</span></button>
                 </article>
                 <article>
                     <figure>
                         <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS1eCKck5yyiDW08v0Uuzc-LssM4iJC3ttkPCbGSW-JpuJpH_OtZoalXeRYyit1DX0tDM9PaF0aedQP_PSy8K1kUc2Un-b1pr0I8YTPaokJFTWsc5nwQYzluZwKWMaS0CKHa9SD7XUSLw&usqp=CAc" alt="Macbook Pro 14 pulgadas gris espacial" width="200"/>
                         <figcaption>Apple</figcaption>
                     </figure>
-                    <h3>Macbook Pro 14"</h3>
+                    <h3 class="titulo">Macbook Pro 14"</h3>
                     <p><strong>$2,000.99</strong></p>
-                    <button type="button">Agregar al carrito</button>
+                    <table class="especificaciones">
+                        <caption>Especificaciones</caption>
+                        <tbody>
+                            <tr><th scope="row">Pantalla</th><td>14.2 pulgadas</td></tr>
+                            <tr><th scope="row">Procesador</th><td>M3 Max</td></tr>
+                            <tr><th scope="row">Memoria</th><td>36 GB</td></tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="comprar-btn"><span>Comprar</span><span class="contador" aria-label="Cantidad de productos">0</span></button>
                 </article>
                 <article>
                     <figure>
                         <img src="https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111902_mbp14-silver2.png" alt="Macbook Pro 14 pulgadas gris espacial" width="200"/>
                         <figcaption>Apple</figcaption>
                     </figure>
-                    <h3>Macbook Pro 14"</h3>
+                    <h3 class="titulo">Macbook Pro 14"</h3>
                     <p><strong>$4,599.99</strong></p>
-                    <button type="button">Agregar al carrito</button>
+                    <table class="especificaciones">
+                        <caption>Especificaciones</caption>
+                        <tbody>
+                            <tr><th scope="row">Pantalla</th><td>14.2 pulgadas</td></tr>
+                            <tr><th scope="row">Procesador</th><td>M3 Pro</td></tr>
+                            <tr><th scope="row">Memoria</th><td>64 GB</td></tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="comprar-btn"><span>Comprar</span><span class="contador" aria-label="Cantidad de productos">1</span></button>
                 </article>
                 <article>
                     <figure>
                         <img src="https://www.appleperu.pe/wp-content/uploads/1990-1.jpg" alt="Macbook Pro 14 pulgadas gris espacial" width="200"/>
                         <figcaption>Apple</figcaption>
                     </figure>
-                    <h3>Macbook Pro 14"</h3>
+                    <h3 class="titulo">Macbook Pro 14"</h3>
                     <p><strong>$1,009.99</strong></p>
-                    <button type="button">Agregar al carrito</button>
+                    <table class="especificaciones">
+                        <caption>Especificaciones</caption>
+                        <tbody>
+                            <tr><th scope="row">Pantalla</th><td>14.2 pulgadas</td></tr>
+                            <tr><th scope="row">Procesador</th><td>M2</td></tr>
+                            <tr><th scope="row">Memoria</th><td>8 GB</td></tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="comprar-btn"><span>Comprar</span><span class="contador" aria-label="Cantidad de productos">0</span></button>
                 </article>
-            <div>
+
+                <article>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Laptop ultradelgada con pantalla brillante y teclado moderno" width="200"/>
+                        <figcaption>Samsung</figcaption>
+                    </figure>
+                    <h3 class="titulo">Galaxy Book 3</h3>
+                    <p><strong>$1,499.00</strong></p>
+                    <table class="especificaciones">
+                        <caption>Especificaciones</caption>
+                        <tbody>
+                            <tr><th scope="row">Pantalla</th><td>15.6 pulgadas</td></tr>
+                            <tr><th scope="row">Procesador</th><td>Intel Core i7</td></tr>
+                            <tr><th scope="row">Memoria</th><td>16 GB</td></tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="comprar-btn"><span>Comprar</span><span class="contador" aria-label="Cantidad de productos">0</span></button>
+                </article>
+            </div>
         </section>
         <section id="compra">
             <h2>Finalizar compra</h2>
@@ -75,7 +132,7 @@
                     <legend>Datos de envio</legend>
                     <p>
                         <label for="nombre">Nombre completo</label><br/>
-                        <input type="text"  id="nombre" name="nombre" required minlength="3" autocomplete="name" placeholder="Nombre del usuario">
+                        <input type="text" id="nombre" name="nombre" required minlength="3" autocomplete="name" placeholder="Nombre del usuario">
                     </p>
                     <p>
                         <label for="email">Correo electronico</label><br/>
@@ -85,36 +142,44 @@
                         <label for="direccion">Direccion</label><br/>
                         <input type="text" id="direccion" name="direccion" required minlength="5" autocomplete="address-line1">
                     </p>
-                    <p>
-                        <label for="ciudad">Ciudad</label><br/>
-                        <input type="text" id="ciudad" name="ciudad" list="ciudades" required autocomplete="address-level2">    
-                        <datalist id="ciudades">
-                            <option value="Lima"></option>
-                            <option value="Bogota"></option>
-                            <option value="Ciudade de Mexico"></option>
-                            <option value="Buenos Aires"></option>
-                            <option value="Madrid"></option>
-                        </datalist>
-                    </p>
-                    <p>
-                        <label for="pais">Pais</label><br/>
-                        <select name="pais" id="pais" required>
-                            <option value="">-Elige un pais-</option>
-                            <option value="pe">Peru</option>
-                            <option value="co">Colombia</option>
-                            <option value="mx">Mexico</option>
-                            <option value="ar">Argentina</option>
-                            <option value="es">Espana</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="telefono">Telefono</label><br/>
-                        <input type="tel" id="telefono" pattern="[0-9]{7,}" title="Solo numeros, al menos 7 digitos" autocomplete="tel">
-                    </p>
-                    <p>
-                        <label for="fecha">Fecha de entrega deseada</label><br/>
-                        <input type="date" id="fecha" name="fecha">
-                    </p>
+                    <div class="fila">
+                        <p>
+                            <label for="ciudad">Ciudad</label><br/>
+                            <input type="text" id="ciudad" name="ciudad" list="ciudades" required autocomplete="address-level2">
+                            <datalist id="ciudades">
+                                <option value="Lima"></option>
+                                <option value="Bogota"></option>
+                                <option value="Ciudade de Mexico"></option>
+                                <option value="Buenos Aires"></option>
+                                <option value="Madrid"></option>
+                            </datalist>
+                        </p>
+                        <p>
+                            <label for="pais">Pais</label><br/>
+                            <select name="pais" id="pais" required>
+                                <option value="">-Elige un pais-</option>
+                                <optgroup label="América">
+                                    <option value="pe">Peru</option>
+                                    <option value="co">Colombia</option>
+                                    <option value="mx">Mexico</option>
+                                    <option value="ar">Argentina</option>
+                                </optgroup>
+                                <optgroup label="Europa">
+                                    <option value="es">Espana</option>
+                                </optgroup>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="fila">
+                        <p>
+                            <label for="telefono">Telefono</label><br/>
+                            <input type="tel" id="telefono" pattern="[0-9]{7,}" title="Solo numeros, al menos 7 digitos" autocomplete="tel">
+                        </p>
+                        <p>
+                            <label for="fecha">Fecha de entrega deseada</label><br/>
+                            <input type="date" id="fecha" name="fecha">
+                        </p>
+                    </div>
                     <p>
                         <label for="cantidad">Cantidad de unidades</label>
                         <input type="number" id="cantidad" name="cantidad" min="1" max="10" step="1" value="1" required>
@@ -124,6 +189,19 @@
                         <textarea name="notas" id="notas" rows="5" maxlength="200"></textarea>
                     </p>
                 </fieldset>
+
+                <fieldset>
+                    <legend>Facturacion</legend>
+                    <p>
+                        <label for="empresa">Empresa (opcional)</label><br/>
+                        <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+                    </p>
+                    <p>
+                        <label for="ruc">RUC</label><br/>
+                        <input type="text" id="ruc" name="ruc" pattern="[0-9]{11}" title="El RUC debe tener 11 dígitos" inputmode="numeric" placeholder="Ingrese 11 dígitos">
+                    </p>
+                </fieldset>
+
                 <fieldset>
                     <legend>Metodo de pago</legend>
                     <p>
@@ -146,50 +224,79 @@
                 <button type="submit">Confirmar pedido</button>
             </form>
         </section>
+
+        <section id="faq" aria-labelledby="faq-titulo">
+            <h2 id="faq-titulo">Preguntas frecuentes</h2>
+            <details>
+                <summary>¿Cuánto tarda la entrega?</summary>
+                <p>En Lima, la entrega suele realizarse en 24 a 48 horas hábiles; en provincias, el tiempo puede variar entre 3 y 7 días según la zona.</p>
+            </details>
+            <details>
+                <summary>¿Puedo pagar contra entrega?</summary>
+                <p>Sí, el pago contra entrega está disponible para determinadas zonas y montos, siempre que la compra cumpla con nuestras condiciones de seguridad.</p>
+            </details>
+            <details>
+                <summary>¿Ofrecen garantía en los productos?</summary>
+                <p>Todos nuestros productos cuentan con garantía del fabricante y, en algunos casos, una cobertura adicional del vendedor según el modelo.</p>
+            </details>
+        </section>
     </main>
     <aside>
-            <h2>Informacion de la compra</h2>
-            <h3>Como comprar en tres pasos</h3>
-            <ol>
-                <li>Elige un producto del catalogo.</li>
-                <li>Agregalo al carrito</li>
-                <li>Confirma tu pedido con tus datos de envio</li>
-            </ol>
+        <h2>Informacion de la compra</h2>
+        <h3>Como comprar en tres pasos</h3>
+        <ol>
+            <li>Elige un producto del catalogo.</li>
+            <li>Agregalo al carrito</li>
+            <li>Confirma tu pedido con tus datos de envio</li>
+        </ol>
 
-            <h3>Costos de envio</h3>
-            <table>
-                <caption>Tarifas por zona</caption>
-                <thead>
-                    <tr>
-                        <th>Zona</th>
-                        <th>Tiempo</th>
-                        <th>Costo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lima</td>
-                        <td>24 horas</td>
-                        <td>Gratis</td>
-                    </tr>
-                    <tr>
-                        <td>Resto del Peru</td>
-                        <td>3 a 5 dias</td>
-                        <td>$9.90</td>
-                    </tr>
-                    <tr>
-                        <td>Internacional</td>
-                        <td>7 a 15 dias</td>
-                        <td>$29.90</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h3>Beneficios de comprar con TechCart</h3>
+        <ol>
+            <li>Envios rapidos y seguimiento en tiempo real.</li>
+            <li>Pagos seguros y opciones flexibles.</li>
+            <li>Atencion personalizada antes y despues de la compra.</li>
+        </ol>
+
+        <h3>Costos de envio</h3>
+        <table>
+            <caption>Tarifas por zona</caption>
+            <thead>
+                <tr>
+                    <th>Zona</th>
+                    <th>Tiempo</th>
+                    <th>Costo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lima</td>
+                    <td>24 horas</td>
+                    <td>Gratis</td>
+                </tr>
+                <tr>
+                    <td>Resto del Peru</td>
+                    <td>3 a 5 dias</td>
+                    <td>$9.90</td>
+                </tr>
+                <tr>
+                    <td>Internacional</td>
+                    <td>7 a 15 dias</td>
+                    <td>$29.90</td>
+                </tr>
+            </tbody>
+        </table>
     </aside>
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 TechCart - Proyecto educativo</p>
-        <p>Datos e imagenes de <a href="https://dummyjson.com" target="_blank" rel="noopener">DummyJson</a></p>
-        <address>Contacto: <a href="mailto:edwardhc1997@gmail.com">edwardhc1997@gmail.com</a></address>
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <p>&copy; 2026 TechCart - Proyecto educativo</p>
+        </div>
+        <div class="footer-links">
+            <p>Datos e imagenes de <a href="https://dummyjson.com" target="_blank" rel="noopener">DummyJson</a></p>
+        </div>
+        <div class="footer-contact">
+            <address>Contacto: <a href="mailto:angeloneire22@gmail.com">angeloneire22@gmail.com</a></address>
+        </div>
     </footer>
 </body>
 </html>
