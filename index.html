@@ -21,6 +21,7 @@
       --color-fondo-suave:  #e5e5ea;
       --color-tarjeta:      #fff;
       --color-resalte:      #e8f1fb;
+      --color-oferta:       #c0392b;
       --color-texto:        #1d1d1f;
       --color-texto-suave:  #6e6e73;
       --color-borde:        #d2d2d7;
@@ -50,6 +51,7 @@
         --color-fondo-suave:  #2c2c2e;
         --color-tarjeta:      #1d1d1f;
         --color-resalte:      #0e2439;
+        --color-oferta:       #b42318;
         --color-texto:        #f5f5f7;
         --color-texto-suave:  #a1a1a6;
         --color-borde:        #3a3a3c;
@@ -75,6 +77,9 @@
 
       .titulo-seccion {
         @apply text-seccion leading-tight after:content-[''] after:block after:w-12 after:h-[3px] after:bg-marca after:mt-1;
+      }
+      .celda {
+        @apply border border-borde px-2 py-1.5;
       }
       .celda-resaltada {
         @apply bg-resalte;
@@ -136,6 +141,7 @@
                         transition-[transform,box-shadow] duration-200
                         hover:-translate-y-1 hover:shadow-lg dark:hover:ring-1 dark:hover:ring-marca
                         animate-aparecer
+                        [animation-delay:100ms]
                         motion-reduce:transition-none motion-reduce:animate-none">
           <figure class="mb-3">
             <img class="aspect-square object-contain dark:brightness-90"
@@ -153,7 +159,11 @@
                         transition-[transform,box-shadow] duration-200
                         hover:-translate-y-1 hover:shadow-lg dark:hover:ring-1 dark:hover:ring-marca
                         animate-aparecer
-                        motion-reduce:transition-none motion-reduce:animate-none">
+                        [animation-delay:200ms]
+                        motion-reduce:transition-none motion-reduce:animate-none
+                        before:content-['Oferta'] before:inline-block before:self-center before:bg-oferta
+                        before:text-white before:text-xs before:font-bold before:rounded-full
+                        before:px-2.5 before:py-0.5 before:mb-2">
           <figure class="mb-3">
             <img class="aspect-square object-contain dark:brightness-90"
                  src="https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/thumbnail.webp"
@@ -169,6 +179,7 @@
                         transition-[transform,box-shadow] duration-200
                         hover:-translate-y-1 hover:shadow-lg dark:hover:ring-1 dark:hover:ring-marca
                         animate-aparecer
+                        [animation-delay:300ms]
                         motion-reduce:transition-none motion-reduce:animate-none">
           <figure class="mb-3">
             <img class="aspect-square object-contain dark:brightness-90"
@@ -330,27 +341,27 @@
       <caption class="font-semibold text-left mb-2">Tarifas por zona</caption>
       <thead>
         <tr>
-          <th class="border border-borde px-2 py-1.5 text-left bg-fondo-suave">Zona</th>
-          <th class="border border-borde px-2 py-1.5 text-left bg-fondo-suave">Tiempo</th>
-          <th class="border border-borde px-2 py-1.5 text-left bg-fondo-suave">Costo</th>
+          <th class="celda text-left bg-fondo-suave">Zona</th>
+          <th class="celda text-left bg-fondo-suave">Tiempo</th>
+          <th class="celda text-left bg-fondo-suave">Costo</th>
         </tr>
       </thead>
       <tbody>
 
         <tr class="even:bg-fondo hover:bg-resalte">
-          <td class="border border-borde px-2 py-1.5">Lima</td>
-          <td class="border border-borde px-2 py-1.5">24 horas</td>
-          <td class="border border-borde px-2 py-1.5">Gratis</td>
+          <td class="celda">Lima</td>
+          <td class="celda">24 horas</td>
+          <td class="celda">Gratis</td>
         </tr>
         <tr class="even:bg-fondo hover:bg-resalte">
-          <td class="border border-borde px-2 py-1.5">Resto del Perú</td>
-          <td class="border border-borde px-2 py-1.5">3 a 5 días</td>
-          <td class="border border-borde px-2 py-1.5">$9.90</td>
+          <td class="celda">Resto del Perú</td>
+          <td class="celda">3 a 5 días</td>
+          <td class="celda">$9.90</td>
         </tr>
         <tr class="even:bg-fondo hover:bg-resalte">
-          <td class="border border-borde px-2 py-1.5">Internacional</td>
-          <td class="border border-borde px-2 py-1.5">7 a 15 días</td>
-          <td class="border border-borde px-2 py-1.5">$29.90</td>
+          <td class="celda">Internacional</td>
+          <td class="celda">7 a 15 días</td>
+          <td class="celda">$29.90</td>
         </tr>
       </tbody>
     </table>
