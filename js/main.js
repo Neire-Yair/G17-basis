@@ -112,3 +112,159 @@ function aplicar(precio, transformacion){
 }
 console.log(aplicar(1000, conDescuento));
 console.log(aplicar(1000, conIGVFlecha));
+
+const productos = [
+    { id: 1, nombre: "Macbook Pro 14", precio: 1999.99, categoria: "laptops", stock: 5, destacado: true },
+    { id: 2, nombre: "iPhone 15 Pro", precio: 1299.99, categoria: "smartphones", stock: 10, destacado: true },
+    { id: 3, nombre: "iPad Pro", precio: 1099.99, categoria: "tablets", stock: 0, destacado: false },
+    { id: 4, nombre: "Airpods Max", precio: 249.99, categoria: "audio", stock: 15, destacado: true },
+    { id: 5, nombre: "Macbook Air 13", precio: 1299.99, categoria: "laptops", stock: 4, destacado: false },
+    { id: 6, nombre: "iPhone 15", precio: 999.99, categoria: "smartphones", stock: 0, destacado: false },
+    { id: 7, nombre: "Apple Watch Series 9", precio: 399.99, categoria: "smartwatches", stock: 8, destacado: false }
+];
+
+console.log(productos.length);
+console.log(productos[0].nombre);
+console.log(productos[productos.length-1].nombre);
+
+const macbook = productos[0];
+console.log(macbook.precio);
+console.log(macbook["precio"]);
+const propiedad = "categoria";
+console.log(macbook[propiedad]);
+
+for(const producto of productos){
+    console.log(producto.nombre + " - " + formatearPrecio(producto.precio));
+}
+console.table(productos);
+
+const carrito = [];
+carrito.push("Macbook Pro 14");
+carrito.push("Airpods Max");
+console.log(carrito.length);
+carrito.pop();
+console.log(carrito.length);
+carrito.unshift("iPad Mini 2021");
+console.log(carrito[0]);
+carrito.shift();
+console.log(carrito); 
+
+const nombres = productos.map(producto => producto.nombre);
+console.log(nombres);
+
+const preciosFormateados = productos.map(p => formatearPrecio(p.precio));
+console.log(preciosFormateados);
+
+const catalogoPresentable = productos.map(({ nombre, categoria, precio, stock}) => ({
+    nombre,
+    categoria,
+    precio: formatearPrecio(precio),
+    stock
+}));
+console.table(catalogoPresentable);
+
+const enStock = productos.filter(p => p.stock > 0);
+console.log(enStock);
+const catalogoEnStock = enStock.map(({ nombre, categoria, precio, stock }) => ({
+    nombre,
+    categoria,
+    precio: formatearPrecio(precio),
+    stock
+}));
+console.table(catalogoEnStock);
+
+const laptops = productos.filter(p => p.categoria === "laptops");
+console.log(laptops.length);
+
+const cuantosHayDe = categoria => productos.filter(p => p.categoria === categoria).length;
+console.log("laptops:", cuantosHayDe("laptops") === 2);
+console.log("televisores:", cuantosHayDe("televisores") === 0);
+
+const economicos = productos.filter(p => p.precio < 600);
+console.log(economicos.map(p => p.nombre));
+
+const valorDelCatalogo = productos.reduce((suma,p) => suma + p.precio, 0);
+console.log(valorDelCatalogo.toFixed(2));
+
+const valorDeInventario = productos.reduce((suma, p) => suma + (p.precio * p.stock), 0);
+console.log(valorDeInventario.toFixed(2));
+
+console.table(productos);
+console.log("Valor del catálogo:", formatearPrecio(valorDelCatalogo));
+
+function resumenCarrito(items) {
+    const total = items.reduce((suma, item) => suma + item.precio, 0);
+    return {
+        cantidad: items.length,
+        total,
+        envio: total >= ENVIO_GRATIS_DESDE ? 0 : 50
+    };
+}
+
+console.log("Resumen del carrito:", resumenCarrito([productos[0], productos[3]]));
+
+const airpods = productos.find( p => p.nombre === "Airpods Max");
+console.log(airpods.precio);
+
+const inexistente = productos.find(p => p.categoria === "televisores");
+console.log(inexistente?.precio);
+
+const stockcon0 =productos.some(p => p.stock === 0);
+console.log(stockcon0);
+console.log(productos.every(p => p.precio > 400));
+
+console.log(categorias.includes("tables")); //true
+console.log(categorias.includes("televisores"));
+
+const busqueda = "mac";
+const resultados = productos.filter(p => p.nombre.toUpperCase().includes(busqueda));
+console.log(resultados);
+
+console.log([10, 9 , 100].sort());
+console.log([10, 9 , 100].sort((a , b) => a - b));
+
+const porPrecio = productos.slice().sort((a, b) => a.precio - b.precio);
+console.log(porPrecio.map(p => p.nombre));
+console.log(productos[0].nombre);
+
+const masBaratoConStockOrdenado = productos
+    .filter(p => p.stock > 0)
+    .slice()
+    .sort((a, b) => a.precio - b.precio)[0];
+const masBaratoConStockReducido = productos
+    .filter(p => p.stock > 0)
+    .reduce((barato, p) => p.precio < barato.precio ? p : barato);
+const masBaratoConStock = productos
+    .filter(p => p.stock > 0)
+    .sort((a, b) => a.precio - b.precio)[0];
+console.log("Más barato con stock (filter + sort):", masBaratoConStockOrdenado.nombre);
+console.log("Más barato con stock (filter + reduce):", masBaratoConStockReducido.nombre);
+console.log("Más barato con stock (filter + sort):", masBaratoConStock.nombre);
+
+const disponibles = productos.filter(p => p.stock > 0);
+const masCaro = productos.reduce((mayor, p) => (p.precio > mayor.precio ? p : mayor), productos[0]);
+console.log(masCaro.nombre);
+
+const resumen = {
+    productos : productos.length,
+    disponibles : disponibles.length,
+    agotados : productos.length - disponibles.length,
+    valorDelCatalogo : formatearPrecio(valorDelCatalogo),
+    valorDelInventario : formatearPrecio(valorDeInventario),
+    masCaro : masCaro.nombre,
+    envioGratisDesde : formatearPrecio(ENVIO_GRATIS_DESDE)
+};
+console.table(resumen);
+
+for(const producto of productos){
+    if(producto.stock === 0) {
+        console.warn("Sin stock:" + producto.nombre);
+    }
+}
+
+const pedido = productos.find(p => p.id === 99);
+if(!pedido){
+    console.error("No existe un producto con id 99");
+}
+
+console.log("Fin del recorrido de clase 07/08");
